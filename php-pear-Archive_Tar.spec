@@ -1,7 +1,9 @@
 %include	/usr/lib/rpm/macros.php
-%define		_pearname	Archive_Tar
-Summary:	Archive_Tar - Tar file management class
-Summary(pl):	Archive_Tar - klasa do zarz±dzania plikami Tar
+%define		_class		Archive
+%define		_subclass	Tar
+%define		_pearname	%{_class}_%{_subclass}
+Summary:	%{_class}_%{_subclass} - Tar file management class
+Summary(pl):	%{_class}_%{_subclass} - klasa do zarz±dzania plikami Tar
 Name:		php-pear-%{_pearname}
 Version:	0.9
 Release:	1
@@ -31,14 +33,14 @@ zainstalowany modu³ rozszerzenia zlib.
 rm -rf $RPM_BUILD_ROOT
 cd %{_pearname}-%{version}
 
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/Archive
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
-install Archive/*.php		$RPM_BUILD_ROOT%{php_pear_dir}/Archive
+install %{_class}/*.php		$RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{php_pear_dir}/Archive
-%{php_pear_dir}/Archive/*.php
+%dir %{php_pear_dir}/%{_class}
+%{php_pear_dir}/%{_class}/*.php
