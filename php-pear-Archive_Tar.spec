@@ -24,7 +24,7 @@ This class provides handling of tar files in PHP. It supports
 creating, listing, extracting and adding to tar files. Gzip support is
 available if PHP has the zlib extension built-in or loaded.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Ta klasa udostêpnia obs³ugê plików tar w PHP. Pozwala na tworzenie,
