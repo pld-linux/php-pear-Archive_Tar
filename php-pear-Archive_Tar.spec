@@ -2,8 +2,8 @@
 %define		_class		Archive
 %define		_subclass	Tar
 %define		_pearname	%{_class}_%{_subclass}
-Summary:	%{_class}_%{_subclass} - Tar file management class
-Summary(pl):	%{_class}_%{_subclass} - klasa do zarz±dzania plikami Tar
+Summary:	%{_pearname} - Tar file management class
+Summary(pl):	%{_pearname} - klasa do zarz±dzania plikami Tar
 Name:		php-pear-%{_pearname}
 Version:	0.9
 Release:	3
