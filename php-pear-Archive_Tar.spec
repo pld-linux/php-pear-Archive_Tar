@@ -19,6 +19,10 @@ creating, listing, extracting and adding to tar files. Gzip support is
 available if PHP has the zlib extension built-in or loaded.
 
 %description -l pl
+Ta klasa udostêpnia obs³ugê plików tar w PHP. Pozwala na tworzenie,
+przegl±danie zawarto¶ci, rozpakowywanie i dodawanie plików do archiwów
+tar. Obs³uga kompresji gzip jest dostêpna, je¶li do PHP jest
+zainstalowany modu³ rozszerzenia zlib.
 
 %prep
 %setup -q -c
