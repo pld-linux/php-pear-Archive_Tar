@@ -6,7 +6,7 @@ Summary:	%{_class}_%{_subclass} - Tar file management class
 Summary(pl):	%{_class}_%{_subclass} - klasa do zarz±dzania plikami Tar
 Name:		php-pear-%{_pearname}
 Version:	0.9
-Release:	2
+Release:	3
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
