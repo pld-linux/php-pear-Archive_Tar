@@ -14,9 +14,9 @@ Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	31e54ce401302065d43888223a0be4d9
 URL:		http://pear.php.net/package/Archive_Tar/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.a11.5
 BuildArch:	noarch
-Requires:	php-pear-PEAR >= 1.4.0-0.a11.2
+Requires:	php-pear-PEAR >= 1:1.4.0-0.a11.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir /etc/pear
