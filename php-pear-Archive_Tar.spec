@@ -8,7 +8,7 @@ Summary:	%{_pearname} - Tar file management class
 Summary(pl):	%{_pearname} - klasa do zarz±dzania plikami Tar
 Name:		php-pear-%{_pearname}
 Version:	1.3.1
-Release:	1.7
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -16,10 +16,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 URL:		http://pear.php.net/package/Archive_Tar/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildArch:	noarch
-Requires:	php-pear-PEAR >= 1.4.0-0.a11.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_sysconfdir /etc/pear
 
 %description
 This class provides handling of tar files in PHP. It supports
@@ -38,30 +35,18 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
-mv package.xml %{_class}_%{_subclass}-%{version}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
-install -d $RPM_BUILD_ROOT%{_sysconfdir}
-cd %{_class}_%{_subclass}-%{version}
-pear \
-	-d doc_dir=%{_docdir}/%{name}-%{version} \
-	install \
-	--installroot=$RPM_BUILD_ROOT \
-	--offline \
-	package.xml
-install package.xml $RPM_BUILD_ROOT%{_sysconfdir}/%{_class}_%{_subclass}.xml
+install %{_pearname}-%{version}/%{_class}/*.php		$RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-pear -q upgrade --register-only --force --offline %{_sysconfdir}/%{_class}_%{_subclass}.xml
-
 %files
 %defattr(644,root,root,755)
 %doc %{_pearname}-%{version}/docs/*
-%{_sysconfdir}/*.xml
 %dir %{php_pear_dir}/%{_class}
 %{php_pear_dir}/%{_class}/*.php
