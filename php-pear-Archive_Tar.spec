@@ -15,6 +15,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	31e54ce401302065d43888223a0be4d9
 URL:		http://pear.php.net/package/Archive_Tar/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1.3
+BuildRequires:	php-zlib
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
