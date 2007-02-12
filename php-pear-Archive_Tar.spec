@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - Tar file management class
-Summary(pl):	%{_pearname} - klasa do zarz±dzania plikami Tar
+Summary(pl.UTF-8):   %{_pearname} - klasa do zarzÄ…dzania plikami Tar
 Name:		php-pear-%{_pearname}
 Version:	1.3.2
 Release:	2
@@ -28,11 +28,11 @@ available if PHP has the zlib extension built-in or loaded.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Ta klasa udostêpnia obs³ugê plików tar w PHP. Pozwala na tworzenie,
-przegl±danie zawarto¶ci, rozpakowywanie i dodawanie plików do archiwów
-tar. Obs³uga kompresji gzip jest dostêpna, je¶li do PHP jest
-zainstalowany modu³ rozszerzenia zlib.
+%description -l pl.UTF-8
+Ta klasa udostÄ™pnia obsÅ‚ugÄ™ plikÃ³w tar w PHP. Pozwala na tworzenie,
+przeglÄ…danie zawartoÅ›ci, rozpakowywanie i dodawanie plikÃ³w do archiwÃ³w
+tar. ObsÅ‚uga kompresji gzip jest dostÄ™pna, jeÅ›li do PHP jest
+zainstalowany moduÅ‚ rozszerzenia zlib.
 
 Ta klasa ma w PEAR status: %{_status}.
 
