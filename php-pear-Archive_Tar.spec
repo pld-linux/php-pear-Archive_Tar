@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - Tar file management class
-Summary(pl.UTF-8):   %{_pearname} - klasa do zarządzania plikami Tar
+Summary(pl.UTF-8):	%{_pearname} - klasa do zarządzania plikami Tar
 Name:		php-pear-%{_pearname}
 Version:	1.3.2
 Release:	2
