@@ -1,18 +1,15 @@
-%include	/usr/lib/rpm/macros.php
-%define		_class		Archive
-%define		_subclass	Tar
 %define		_status		stable
-%define		_pearname	%{_class}_%{_subclass}
-
+%define		_pearname	Archive_Tar
+%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - Tar file management class
 Summary(pl.UTF-8):	%{_pearname} - klasa do zarządzania plikami Tar
 Name:		php-pear-%{_pearname}
-Version:	1.3.7
+Version:	1.3.8
 Release:	1
-License:	NEW BSD
+License:	New BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	a40b15b38ef8a5239309c9faedfa123b
+# Source0-md5:	1ee2c475803ca37e7f3354a76e3223a4
 URL:		http://pear.php.net/package/Archive_Tar/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -53,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc install.log
 %doc docs/%{_pearname}/docs/*
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
+%{php_pear_dir}/Archive/*.php
