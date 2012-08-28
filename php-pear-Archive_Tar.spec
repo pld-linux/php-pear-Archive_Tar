@@ -48,6 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc install.log
-%doc README docs/%{pearname}/docs/*
+%doc docs/%{pearname}/docs/*
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/Archive/*.php
