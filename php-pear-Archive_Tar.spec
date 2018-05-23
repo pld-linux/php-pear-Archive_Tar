@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_with	bootstrap	# bootstrap build without PEAR installed (for first php-pear-PEAR installation)
+
 %define		status		stable
 %define		pearname	Archive_Tar
 %include	/usr/lib/rpm/macros.php
@@ -11,7 +15,9 @@ Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
 # Source0-md5:	f547764b567155219a87273b23b148fb
 URL:		http://pear.php.net/package/Archive_Tar/
+%if %{without bootstrap}
 BuildRequires:	php-pear-PEAR
+%endif
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.580
 Requires:	php-pear
@@ -34,20 +40,30 @@ zainstalowany moduł rozszerzenia zlib.
 Ta klasa ma w PEAR status: %{status}.
 
 %prep
+%if %{without bootstrap}
 %pear_package_setup
+%else
+%setup -q -c -n %{pearname}-%{version}
+%{__mv} %{pearname}-%{version}/* .
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
+
+%if %{without bootstrap}
 %pear_package_install
+%else
+cp -pr Archive $RPM_BUILD_ROOT%{php_pear_dir}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc install.log
-%doc docs/%{pearname}/docs/*
-%{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/Archive/*.php
+%if %{without bootstrap}
+%doc install.log docs/%{pearname}/docs/*
+%{php_pear_dir}/.registry/archive_tar.reg
+%endif
+%{php_pear_dir}/Archive/Tar.php
