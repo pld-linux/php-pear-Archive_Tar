@@ -8,12 +8,12 @@
 Summary:	%{pearname} - Tar file management class
 Summary(pl.UTF-8):	%{pearname} - klasa do zarządzania plikami Tar
 Name:		php-pear-%{pearname}
-Version:	1.4.3
+Version:	1.4.5
 Release:	1
 License:	New BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	3f04593df320ebb495e77d3c2762c658
+# Source0-md5:	86f50dd602f23d1dc4e1d983a584cd38
 URL:		http://pear.php.net/package/Archive_Tar/
 %if %{without bootstrap}
 BuildRequires:	php-pear-PEAR
