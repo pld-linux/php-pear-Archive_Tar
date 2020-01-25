@@ -4,7 +4,6 @@
 
 %define		status		stable
 %define		pearname	Archive_Tar
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Tar file management class
 Summary(pl.UTF-8):	%{pearname} - klasa do zarządzania plikami Tar
 Name:		php-pear-%{pearname}
